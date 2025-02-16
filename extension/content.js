@@ -14,10 +14,13 @@ function extractMessageId() {
 function fetchEmailContent(messageId) {
     if (!messageId) return;
     chrome.runtime.sendMessage({ action: "fetchEmail", messageId }, (response) => {
-        if (response?.email) {
-            console.log("Fetched Email Content:", response.email);
-            // Forward result to popup (optional)
-            chrome.runtime.sendMessage({ action: "updateResult", result: response.email });
+        if (response) {
+            console.log("API Response:", response);
+            // Forward entire result to popup
+            chrome.runtime.sendMessage({ 
+                action: "updateResult", 
+                result: response 
+            });
         } else {
             console.error("Failed to fetch email content.");
         }

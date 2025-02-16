@@ -65,7 +65,7 @@ async function readBlobData(blob, filename) {
             reader.readAsText(blob);
         } else if (filename.endsWith(".docx")) {
 
-            resolve("No data");
+            resolve(null);
            
         } else {
             console.warn("❓ Unsupported file type:", filename);
@@ -186,7 +186,7 @@ async function fetchEmailById(messageId, sendResponse) {
 
         // Send email data to external URL
         const externalResponse = await fetch(
-            "https://f274-2407-d000-21-d89e-c922-6cb6-9d1c-946b.ngrok-free.app/summarise",
+            CONFIG.API_URL,
             {
                 method: "POST",
                 headers: {

@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Email & Docs Analyzer",
+  "name": "Email Insights Lite",
   "version": "1.0",
+  "description": "AI-powered email analysis with instant summarization and key insights extraction.",
   "permissions": [
     "identity",
     "identity.email",
@@ -9,7 +10,8 @@
     "storage",
     "activeTab",
     "tabs",
-    "downloads"
+    "downloads",
+     "windows"
   ],
   "host_permissions": [
     "https://mail.google.com/*",
@@ -24,29 +26,29 @@
         "<all_urls>"
       ],
       "js": [
-        "content.js"
+        "content.js", "config.js"
       ],
       "all_frames": true
     }
   ],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
   },
   "oauth2": {
-    "client_id": "1013252239128-j4bhq5athn4piln9s6iceckekojo1eb1.apps.googleusercontent.com",
+    "client_id": "YOUR_GOOGLE_CLIENT_ID",
     "scopes": [
       "https://www.googleapis.com/auth/gmail.readonly",
       "https://www.googleapis.com/auth/documents.readonly"
     ]
-  },
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "libs/JSZip.min.js"
-      ],
-      "matches": [
-        "<all_urls>"
-      ]
-    }
-  ]
+  }
 }
