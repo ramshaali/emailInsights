@@ -3,3 +3,4 @@ python-magic
 pypdf2
 pydantic
 langchain-deepseek
+gunicorn
