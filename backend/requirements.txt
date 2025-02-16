@@ -1,5 +1,7 @@
 Flask
-python-magic-bin
+python-magic
 pypdf2
 pydantic
 langchain-deepseek
+gunicorn
+python-dotenv

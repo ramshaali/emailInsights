@@ -11,8 +11,8 @@ app = Flask(__name__)
 
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)  # Create directory if not exists
-UPLOAD_DIR = "images"
-os.makedirs(UPLOAD_DIR, exist_ok=True)  # Create directory if not exists
+IMAGES_DIR = "images"
+os.makedirs(IMAGES_DIR, exist_ok=True)  # Create directory if not exists
 
 
 @app.route('/summarise', methods=['POST'])
@@ -121,8 +121,10 @@ def extract_text_from_xml(xml_path):
 
 def cleanup_and_return(response):
     """Cleans up uploaded files and returns response."""
-    # shutil.rmtree(UPLOAD_DIR)
-    # os.makedirs(UPLOAD_DIR, exist_ok=True)
+    shutil.rmtree(UPLOAD_DIR)
+    shutil.rmtree(IMAGES_DIR)
+    os.makedirs(UPLOAD_DIR, exist_ok=True)
+    os.makedirs(IMAGES_DIR, exist_ok=True)
     return response
 
 
