@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "Email & Docs Analyzer",
+  "version": "1.0",
+  "permissions": [
+    "identity",
+    "identity.email",
+    "scripting",
+    "storage",
+    "activeTab",
+    "tabs",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://docs.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "oauth2": {
+    "client_id": "1013252239128-j4bhq5athn4piln9s6iceckekojo1eb1.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.readonly",
+      "https://www.googleapis.com/auth/documents.readonly"
+    ]
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/JSZip.min.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

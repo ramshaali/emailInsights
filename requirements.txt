@@ -1,5 +1,0 @@
-Flask
-python-magic-bin
-pypdf2
-pydantic
-langchain-deepseek
