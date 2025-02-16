@@ -88,5 +88,79 @@ extension/
   - Check the Chrome DevTools console for any API errors.
 
 ## Support
-For any issues or questions, please create an issue on the [GitHub repository](https://github.com/your-repo/email-insights-lite/issues).
+For any issues or questions, please create an issue on the [GitHub repository](https://github.com/your-repo/email-insights-lite/issues)
+
+
+
+# 📌 Python Backend
+
+This is a simple Python backend with a single API endpoint. Follow the steps below to set it up and run.
+
+## 🚀 Installation
+
+### Step 1: Clone the Repository
+```sh
+git clone https://github.com/ramshaali/emailInsights.git
+cd backend
+```
+
+### Step 2: Create a Virtual Environment (Optional but Recommended)
+```sh
+python -m venv venv
+source venv/bin/activate  # On macOS/Linux
+venv\Scripts\activate     # On Windows
+```
+
+### Step 3: Install Dependencies
+For **Linux/macOS**:
+```sh
+pip install -r requirements.txt
+```
+
+For **Windows** (to fix `python-magic` issue):
+```sh
+pip install -r requirements.txt
+pip install python-magic-bin
+```
+
+## ⚙️ Configuration
+
+### Step 4: Set Environment Variable  
+Before running the application, set your **DeepSeek API key**:  
+
+#### On Linux/macOS:
+```sh
+export DEEPSEEK_API_KEY="your_api_key_here"
+```
+
+#### On Windows (PowerShell):
+```powershell
+$env:DEEPSEEK_API_KEY="your_api_key_here"
+```
+
+#### On Windows (Command Prompt):
+```cmd
+set DEEPSEEK_API_KEY=your_api_key_here
+```
+
+Alternatively, create a `.env` file in the root directory:
+```
+DEEPSEEK_API_KEY=your_api_key_here
+```
+
+## ▶️ Running the App
+
+Start the application by running:
+```sh
+python main.py
+```
+
+## 📌 Notes
+- Make sure **Python 3.8+** is installed.  
+- If you face issues with dependencies, try upgrading pip:  
+  ```sh
+  pip install --upgrade pip
+  ```
+- For deployment, consider using **Gunicorn** or **Uvicorn**.
+
 
